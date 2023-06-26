@@ -1,6 +1,7 @@
+import BarChartCard from "./components/dashboard/cards/BarChartCard/bar-chart-card.component";
 import SingleInfoCard, {
   SingleInfoCardProps,
-} from "./components/dashboard/cards/single-info-card.component";
+} from "./components/dashboard/cards/SingleInfoCard/single-info-card.component";
 import SessionGraphCard from "./components/dashboard/overview/session_graph_card.component";
 
 interface InfoCardArray extends Array<SingleInfoCardProps> {}
@@ -45,6 +46,13 @@ function App() {
       </div>
 
       <SessionGraphCard />
+      <BarChartCard
+        title="Most Active Users"
+        value="+1.684"
+        stat="+12"
+        duration="Last 3 Years"
+        barChartData={[]}
+      />
     </div>
   );
 }
