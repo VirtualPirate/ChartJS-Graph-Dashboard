@@ -1,7 +1,36 @@
+import CountryProgress from "./country-progress.component";
+
+const countryStats = [
+  {
+    src: "united-states.png",
+    name: "United States",
+    barColor: "bg-green-500",
+    percentage: "45",
+  },
+  {
+    src: "united-kingdom.png",
+    name: "United Kingdom",
+    barColor: "bg-blue-500",
+    percentage: "35",
+  },
+  {
+    src: "india.png",
+    name: "India",
+    barColor: "bg-orange-500",
+    percentage: "20",
+  },
+  {
+    src: "poland.png",
+    name: "Indonesia",
+    barColor: "bg-red-500",
+    percentage: "20",
+  },
+];
+
 export default function LocationStatCard() {
   return (
     <div
-      className="flex flex-col gap-6 bg-white p-8 rounded-lg"
+      className="flex flex-col gap-10 bg-white p-8 rounded-lg"
       style={{
         gridColumn: "span 1.5 / span 1.5",
       }}
@@ -29,6 +58,15 @@ export default function LocationStatCard() {
             <div className=" bg-slate-500 h-1 w-1 rounded-full"></div>
             <div className=" bg-slate-500 h-1 w-1 rounded-full"></div>
           </div>
+        </div>
+      </div>
+
+      <div className="flex justify-between">
+        <div></div>
+        <div className="flex flex-col gap-4">
+          {countryStats.map((stat) => (
+            <CountryProgress {...stat} />
+          ))}
         </div>
       </div>
     </div>
