@@ -63,7 +63,7 @@ export default function LocationStatCard() {
 
       <div className="flex justify-between">
         <div></div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 w-[40%]">
           {countryStats.map((stat) => (
             <CountryProgress {...stat} />
           ))}

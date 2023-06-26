@@ -54,7 +54,7 @@ export default function DeviceSessionStatCard() {
 
       <div className="flex justify-between">
         <div></div>
-        <div className="flex flex-col gap-6 w-[40%]">
+        <div className="flex flex-col gap-6 w-[50%]">
           {deviceStats.map((stat) => (
             <DeviceProgressStat {...stat} />
           ))}

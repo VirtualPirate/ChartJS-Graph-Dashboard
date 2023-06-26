@@ -52,7 +52,7 @@ const chartData = {
         "#f1f5f9",
         "#f1f5f9",
         "#f1f5f9",
-        "#38bdf8",
+        "#3b82f6",
         "#f1f5f9",
         "#f1f5f9",
       ],
@@ -74,13 +74,13 @@ interface BarChartCardProps {
 
 export default function BarChartCard(props: BarChartCardProps) {
   return (
-    <div className=" bg-white rounded-lg p-5 flex flex-col justify-between gap-10">
+    <div className=" bg-white rounded-lg p-5 flex flex-col justify-between gap-8">
       <div className="flex justify-between">
         <div className="flex gap-4 w-[100%]">
           <span className={` text-black text-lg font-bold`}>{props.title}</span>
         </div>
 
-        <div className="ml-10 flex items-center gap-1 justify-self-end hover:bg-slate-100 p-2 rounded-full cursor-pointer">
+        <div className="flex items-center gap-1 justify-self-end hover:bg-slate-100 p-2 rounded-full cursor-pointer">
           <div className=" bg-slate-500 h-1 w-1 rounded-full"></div>
           <div className=" bg-slate-500 h-1 w-1 rounded-full"></div>
           <div className=" bg-slate-500 h-1 w-1 rounded-full"></div>
@@ -89,7 +89,9 @@ export default function BarChartCard(props: BarChartCardProps) {
 
       <div className="flex justify-between">
         <div className="flex gap-4">
-          <span className={` text-black text-lg font-bold`}>{props.value}</span>
+          <span className={` text-black text-2xl font-bold`}>
+            {props.value}
+          </span>
           <span
             className={` text-green-500 text-sm font-semibold p-1 px-4 rounded-lg bg-green-50`}
           >
@@ -100,7 +102,7 @@ export default function BarChartCard(props: BarChartCardProps) {
         <div className=" text-slate-300 text-sm">{props.duration}</div>
       </div>
 
-      <div className="flex justify-center w-[100%] h-96">
+      <div className="flex justify-center w-[100%]">
         <Bar
           data={chartData}
           options={chartOptions}
