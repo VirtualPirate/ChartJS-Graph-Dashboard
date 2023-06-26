@@ -1,11 +1,35 @@
 import DeviceProgressStat from "./device-progress-stat.component";
 
+import { Chart as ChartJS, registerables } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+ChartJS.register(...registerables);
+
+const chartData = {
+  labels: ["Red", "Blue", "Yellow"],
+  datasets: [
+    {
+      data: [76, 21, 3],
+      backgroundColor: ["#3b82f6", "#f87171", "#fb923c"],
+      hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+    },
+  ],
+};
+
+const chartOptions = {
+  cutout: "80%",
+  plugins: {
+    legend: {
+      display: false, // Disable the entire legend
+    },
+  },
+};
+
 const deviceStats = [
   {
     name: "Desktop",
     exactCount: "4,089",
     percentage: "76",
-    barColor: "bg-green-500",
+    barColor: "bg-blue-500",
   },
 
   {
@@ -52,8 +76,19 @@ export default function DeviceSessionStatCard() {
         </div>
       </div>
 
-      <div className="flex justify-between">
-        <div></div>
+      <div className="flex justify-between gap-4">
+        <div className="flex justify-center items-center w-[40%] relative">
+          <Doughnut data={chartData} options={chartOptions} />
+          <div
+            className=" absolute top-[50%] left-[50%] flex flex-col items-center"
+            style={{
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <span>Total</span>
+            <span className="text-3xl font-bold">5,338</span>
+          </div>
+        </div>
         <div className="flex flex-col gap-6 w-[50%]">
           {deviceStats.map((stat) => (
             <DeviceProgressStat {...stat} />
