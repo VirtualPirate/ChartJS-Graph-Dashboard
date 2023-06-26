@@ -38,12 +38,15 @@ const infos: InfoCardArray = [
 
 function App() {
   return (
-    <div className="flex flex-col gap-8 p-10">
-      <div className="flex gap-6">
-        {infos.map((info) => {
-          return <SingleInfoCard {...info} />;
-        })}
-      </div>
+    <div
+      className="grid grid-cols-3 gap-4 p-10"
+      // "flex flex-col gap-8 p-10"
+    >
+      {/* <div className="flex gap-6"> */}
+      {infos.map((info) => {
+        return <SingleInfoCard {...info} />;
+      })}
+      {/* </div> */}
 
       <SessionGraphCard />
       <BarChartCard

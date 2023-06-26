@@ -38,7 +38,7 @@ export default function SingleInfoCard(props: SingleInfoCardProps) {
   };
 
   return (
-    <div className=" bg-white rounded-lg p-5 w-96 flex flex-col justify-between gap-10">
+    <div className=" bg-white rounded-lg p-5 flex flex-col justify-between gap-10">
       <div className="flex justify-between">
         <div className="flex gap-4 w-[100%]">
           <span className={` text-black text-lg font-bold`}>{props.title}</span>

@@ -45,7 +45,7 @@ const chartOptions = {
 
 export default function SessionGraphCard() {
   return (
-    <div className="flex flex-col gap-6 bg-white p-8 rounded-lg w-8/12">
+    <div className="col-span-2 flex flex-col gap-6 bg-white p-8 rounded-lg">
       <div className="flex justify-between">
         <span className="font-bold text-xl">Session Overview</span>
         <div className="flex gap-4">
