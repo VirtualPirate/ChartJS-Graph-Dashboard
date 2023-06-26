@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
-// import * as Datamap from "../../node_modules/datamaps/dist/datamaps.world.min.js";
+// import * as Datamap from "/datamaps/dist/datamaps.world.min.js";
 // import Datamap from "datamaps";
 // import * as Datamap from "datamaps";
+
+// const Datamap: any = undefined;
 
 export function WorldMap() {
   const [firstRun, setFirstRun] = useState(false);
 
   useEffect(() => {
     if (firstRun) return () => {};
+    // @ts-ignore
     var myMap = new Datamap({
       element: document.getElementById("basic"),
       scope: "world",
@@ -23,7 +26,7 @@ export function WorldMap() {
         popupOnHover: true,
         highlightOnHover: true,
         highlightFillColor: "white",
-        popupTemplate: function (geography, data) {
+        popupTemplate: function (geography: any, data: any) {
           return (
             '<div class="hoverinfo">' +
             geography.properties.name +
