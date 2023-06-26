@@ -78,11 +78,6 @@ export default function BarChartCard(props: BarChartCardProps) {
       <div className="flex justify-between">
         <div className="flex gap-4 w-[100%]">
           <span className={` text-black text-lg font-bold`}>{props.title}</span>
-          {/* <span
-            className={` text-green-500 text-sm font-semibold p-1 px-4 rounded-lg bg-green-50`}
-          >
-            {props.stat}%
-          </span> */}
         </div>
 
         <div className="ml-10 flex items-center gap-1 justify-self-end hover:bg-slate-100 p-2 rounded-full cursor-pointer">
@@ -105,7 +100,7 @@ export default function BarChartCard(props: BarChartCardProps) {
         <div className=" text-slate-300 text-sm">{props.duration}</div>
       </div>
 
-      <div className="w-[100%] h-96">
+      <div className="flex justify-center w-[100%] h-96">
         <Bar
           data={chartData}
           options={chartOptions}
@@ -113,24 +108,6 @@ export default function BarChartCard(props: BarChartCardProps) {
           height={"160"}
         />
       </div>
-
-      {/* <div className="flex justify-between">
-        <div className="flex gap-2 flex-col">
-          <span className=" text-3xl font-bold text-black">{props.value}</span>
-          <span className=" text-slate-400 font-semibold">
-            {props.secondValue}
-          </span>
-        </div>
-
-        <div className="w-1/2 h-20">
-          <Line
-            data={chartData}
-            options={chartOptions}
-            width={"60"}
-            height={"30"}
-          />
-        </div>
-      </div> */}
     </div>
   );
 }

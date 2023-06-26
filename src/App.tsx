@@ -1,4 +1,6 @@
 import BarChartCard from "./components/dashboard/cards/BarChartCard/bar-chart-card.component";
+import DeviceSessionStatCard from "./components/dashboard/cards/DeviceSessionStatCard/device-session-stat-card.component";
+import LocationStatCard from "./components/dashboard/cards/LocationStatCard/location-stat-card.component";
 import SingleInfoCard, {
   SingleInfoCardProps,
 } from "./components/dashboard/cards/SingleInfoCard/single-info-card.component";
@@ -38,15 +40,10 @@ const infos: InfoCardArray = [
 
 function App() {
   return (
-    <div
-      className="grid grid-cols-3 gap-4 p-10"
-      // "flex flex-col gap-8 p-10"
-    >
-      {/* <div className="flex gap-6"> */}
+    <div className="grid grid-cols-3 gap-4 p-10">
       {infos.map((info) => {
         return <SingleInfoCard {...info} />;
       })}
-      {/* </div> */}
 
       <SessionGraphCard />
       <BarChartCard
@@ -56,6 +53,11 @@ function App() {
         duration="Last 3 Years"
         barChartData={[]}
       />
+
+      <div className="col-span-3 grid grid-cols-2 gap-4">
+        <LocationStatCard />
+        <DeviceSessionStatCard />
+      </div>
     </div>
   );
 }
