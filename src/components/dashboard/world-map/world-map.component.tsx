@@ -17,8 +17,9 @@ export function WorldMap() {
       responsive: true,
       fills: {
         defaultFill: "#d1d5db",
-        firstWorld: "#86efac",
-        thirdWorld: "#86efac",
+        firstWorld: "#22c55e",
+        thirdWorld: "#f97316",
+        uk: "#3b82f6",
         interestingSpot: "#86efac",
         boringSpot: "#86efac",
       },
@@ -31,7 +32,7 @@ export function WorldMap() {
             '<div class="hoverinfo">' +
             geography.properties.name +
             " - User Percentage :" +
-            data.formationDate +
+            data.percentage +
             " "
           );
         },
@@ -40,27 +41,16 @@ export function WorldMap() {
         // Country Codes list https://countrycode.org/
         USA: {
           fillKey: "firstWorld",
-          formationDate: "54%",
-        },
-        CHN: {
-          fillKey: "thirdWorld",
-          formationDate: 1700,
-        },
-        JPN: {
-          fillKey: "firstWorld",
-          formationDate: 1930,
-        },
-        AUS: {
-          fillKey: "firstWorld",
-          formationDate: 1350,
+          percentage: "54%",
         },
         IND: {
           fillKey: "thirdWorld",
-          formationDate: 1500,
+          percentage: "20%",
         },
-        RUS: {
-          fillKey: "fiveWorld",
-          formationDate: 100,
+
+        GBR: {
+          fillKey: "uk",
+          percentage: "35%",
         },
       },
     });
