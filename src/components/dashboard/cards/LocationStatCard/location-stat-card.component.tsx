@@ -1,5 +1,7 @@
 import CountryProgress from "./country-progress.component";
 
+import { WorldMap } from "../../world-map/world-map.component";
+
 const countryStats = [
   {
     src: "united-states.png",
@@ -62,8 +64,10 @@ export default function LocationStatCard() {
       </div>
 
       <div className="flex justify-between">
-        <div></div>
-        <div className="flex flex-col gap-4 w-[40%]">
+        <div className="w-[50%] h-40 overflow-hidden 2xl:h-60">
+          <WorldMap />
+        </div>
+        <div className="flex flex-col gap-4 w-[40%] ">
           {countryStats.map((stat) => (
             <CountryProgress {...stat} />
           ))}

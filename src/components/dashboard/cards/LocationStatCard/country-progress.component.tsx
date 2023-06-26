@@ -14,7 +14,7 @@ export default function CountryProgress(props: CountryProgressProps) {
         <div className="flex items-center gap-2 w-[100%]">
           <div className="w-[100%] rounded-full h-2 bg-slate-300">
             <div
-              className={`bg-green-500 h-2 rounded-full ${props.barColor}`}
+              className={`h-2 rounded-full ${props.barColor}`}
               style={{ width: `${props.percentage}%` }}
             ></div>
           </div>
